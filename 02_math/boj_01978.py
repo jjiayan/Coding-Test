@@ -1,0 +1,24 @@
+import sys
+input = sys.stdin.readline
+
+def is_prime(x):
+    if x <= 1: return False
+    for i in range(2, int(x ** (0.5)) + 1):
+        if x % i == 0:
+            return False
+    return True
+
+def solve():
+    n = int(input())
+    arr = list(map(int, input().split()))
+    cnt = 0
+    
+    for i in arr:
+        if is_prime(i):
+            cnt += 1
+    print(cnt)
+    
+    
+
+if __name__ == "__main__":
+    solve()
